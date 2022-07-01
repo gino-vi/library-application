@@ -22,32 +22,11 @@ Enter the commands in your terminal:
 The application acts as a helper for users to check out books from a library, and for an admin to manage books and users in a database.
 
 
-== Debugger
+== Home Page
 
-Debugger support is available through the debugger command when you start your
-Mongrel or WEBrick server with --debugger. This means that you can break out of
-execution at any point in the code, investigate and change the model, and then,
-resume execution! You need to install ruby-debug to run the server in debugging
-mode. With gems, use <tt>sudo gem install ruby-debug</tt>. Example:
+By design, a user needs an account to be able to check out books. Users can navigate to other sections of the website, but will be unable to do much without an account. Sign up and login links are easily accessible from the home page.
 
-  class WeblogController < ActionController::Base
-    def index
-      @posts = Post.all
-      debugger
-    end
-  end
-
-...and even better, you can examine how your runtime objects actually work:
-
-  >> f = @posts.first
-  => #<Post:0x13630c4 @attributes={"title"=>nil, "body"=>nil, "id"=>"1"}>
-  >> f.
-  Display all 152 possibilities? (y or n)
-
-Finally, when you're ready to resume execution, you can enter "cont".
-
-
-== Console
+== Checking out books
 
 The console is a Ruby shell, which allows you to interact with your
 application's domain model. Here you'll have all parts of the application
