@@ -9,12 +9,12 @@ Enter the commands in your terminal:
        git clone https://github.com/gino-vi/library-application/
 
 2. Initalize the database:
-       <tt>db rake:create
-       db rake:migrate</tt>
+       db rake:create
+       db rake:migrate
 
 3. Run the server:
-       <tt>rails s</tt>
-
+       rails s
+       
 4. Navigate to http://localhost:3000/
 
 == Overview
