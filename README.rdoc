@@ -28,24 +28,8 @@ By design, a user needs an account to be able to check out books. Users can navi
 
 == Checking out books
 
-The console is a Ruby shell, which allows you to interact with your
-application's domain model. Here you'll have all parts of the application
-configured, just like it is when the application is running. You can inspect
-domain models, change values, and save to the database. Starting the script
-without arguments will launch it in the development environment.
+Once a user is logged in, they can view the list of books in the database. They can sort the listing by availability, and view basic information about the book. Should they decide to check out the book, they can click a button to do so. The user will be given details about when to pick up the book, and when to return it. Upon successful check out, the user is given a notification and the book will be 'On hold' under their name.
 
-To start the console, run <tt>rails console</tt> from the application
-directory.
+== Admin view
 
-Options:
-
-* Passing the <tt>-s, --sandbox</tt> argument will rollback any modifications
-  made to the database.
-* Passing an environment name as an argument will load the corresponding
-  environment. Example: <tt>rails console production</tt>.
-
-To reload your controllers and models after launching the console run
-<tt>reload!</tt>
-
-More information about irb can be found at:
-link:http://www.rubycentral.org/pickaxe/irb.html
+Admin users can look at the book listing in more detail.
