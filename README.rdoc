@@ -6,7 +6,7 @@ Developed to meet a project requirement for SAIT interns.
 
 Enter the commands in your terminal:
 1. Clone the repo:
-       <tt>git clone https://github.com/gino-vi/library-application/</tt>
+       git clone https://github.com/gino-vi/library-application/
 
 2. Initalize the database:
        <tt>db rake:create
