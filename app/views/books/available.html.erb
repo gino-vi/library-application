@@ -1,0 +1,8 @@
+<h1>Hello, world.</h1>
+
+<% if can? :manage, Book %>
+<p>Welcome, admin. You can manage books.</p>
+
+<% else %>
+<p>An error occurred. Something went wrong. Navigate through the site using the navbar at the top.</p>
+<% end %>

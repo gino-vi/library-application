@@ -1,0 +1,42 @@
+<h1 class="display-4">Check out</h1>
+
+<% if current_user %>
+<p>You have selected the following book to check out:</p>
+
+<p class="lead">
+  <b>Title:</b>
+  <%= @book.book_name %>
+</p>
+
+<p class="lead">
+  <b>Author:</b>
+  <%= @book.author %>
+</p>
+
+<p class="lead">
+  <b>Status:</b>
+  <%= Book::STATUS.find {|item| item[1] == @book.status }[0] %>
+</p>
+
+<hr class="my-4">
+<% if @book.status != 1 %>
+<p>This book is currently not available for check out. The estimated return date is <%= due_date %>.</p>
+<% else %>
+
+<p>If you check out this book, you will have until <%= projected_pickup_date %> to pick it up. It will be due by <%= projected_due_date %>.
+<br>
+Failure to return by this date may result in late fees. This book will be checked out under your name.                    
+<br>
+If you consent to these terms, press 'Check Out' below. </p>
+
+<%= link_to "Check Out", book_checkout_submit_path, class: "btn btn-primary" %>
+
+<% end %>
+
+<% else %>
+<p><%= not_logged_in_checkout %></p>
+
+<% end %>
+<br>
+<br/>
+<%= link_to 'Back', books_path, class: "btn btn-outline-secondary" %>

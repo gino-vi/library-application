@@ -1,0 +1,37 @@
+<h1 class="display-4">Book information</h1>
+
+<p class="lead">
+  <b>Title:</b>
+  <%= @book.book_name %>
+</p>
+
+<p class="lead">
+  <b>Author:</b>
+  <%= @book.author %>
+</p>
+
+<p class="lead">
+  <b>Status:</b>
+  <%= Book::STATUS.find {|item| item[1] == @book.status }[0] %>
+</p>
+
+<% if can? :manage, Book %>
+<p class="lead">
+  <b>Checked out by:</b>
+  <%= @book.checked_out_by %>
+</p>
+<% else %>
+<% end %>
+
+<% if @book.status != 1 %>
+<p>This book is currently not available for check out. The estimated return date is <%= due_date %>.</p>
+<% else %>
+<% end %>
+
+<% if can? :manage, Book %>
+<%= link_to 'Edit', edit_book_path(@book), class: "btn btn-outline-primary" %>
+<% else %>
+<% end %>
+<br/>
+
+<%= link_to 'Back', books_path, class: "btn btn-outline-secondary" %>

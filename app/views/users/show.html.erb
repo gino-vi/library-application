@@ -1,0 +1,31 @@
+<% if current_user.id == @user.id or current_user.admin %>
+
+<div class="jumbotron">
+  <h1 class="display-4">User Profile</h1>
+  <p class="lead">Hello, <%= full_name %>! This is the information we have on record for your profile.</p>
+  <hr class="my-4">
+  <p class="lead"><b>First name</b>: <%= @user.first_name %>
+  <br />
+  <b>Last name</b>: <%= @user.last_name %>
+  <br />
+  <b>Email</b>: <%= @user.email %>
+  <br />
+  <b>State</b>: <%= @user.state %>
+  <br />
+  <b>City</b>: <%= @user.city %>
+  <br />
+  <b>Address</b>: <%= @user.address %>
+  <br />
+  <b>Phone Number</b>: <%= number_to_phone(@user.phone_number) %>  
+  </p>
+</div>
+<hr class="my-4">
+
+<p>If you believe any of this information is in error, please contact an administrator to get it changed.</p>
+<p>If you need to change your password or email, click <%= link_to "here", edit_user_registration_path %>.</p>
+
+<% else %>
+<br>
+<br>
+<p class="lead"><%= user_is_not_admin %></p>
+<% end %>

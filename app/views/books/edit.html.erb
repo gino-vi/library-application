@@ -1,0 +1,15 @@
+<% if can? :manage, Book %>
+<h1 class="display-4">Editing book</h1>
+
+<%= render 'form' %>
+
+<br/>
+<%= link_to 'Back', books_path, class: "btn btn-secondary" %>
+<%= link_to 'Show', @book, class: "btn btn-info" %>
+
+
+<% else %>
+<br>
+<br>
+<p class="lead"><%= user_is_not_admin %></p>
+<% end %>

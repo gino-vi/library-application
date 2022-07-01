@@ -1,0 +1,14 @@
+<title><%= @title || "Library Application" %></title>
+<h1 class="display-4">Library App Home</h1>
+<p>Welcome to our library! Navigate around the site by clicking the links below, or use the navbar at the top.</p>
+
+<% if current_user %>
+<%= link_to 'Sign out', destroy_user_session_path, method: :delete %> |
+<%= link_to 'Profile', user_path(current_user.id) %> |
+<%= link_to 'Check out books', 'books' %>
+
+<% else %>
+<%= link_to 'Register', new_user_registration_path %> |
+
+<%= link_to 'Login', new_user_session_path %>
+<% end %>

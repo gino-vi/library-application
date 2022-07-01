@@ -1,0 +1,61 @@
+<h1 class="display-4">Sign up</h1>
+
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <% f.label :email %><br />
+    <%= f.email_field :email, class:"form-control", placeholder: "Email" %>
+  </div>
+
+  <div class="field">
+    <% f.label :password %>
+    <% if @minimum_password_length %>
+    <% end %><br />
+    <%= f.password_field :password, class:"form-control", placeholder: "Password (#{@minimum_password_length} characters minimum)" %>
+  </div>
+
+  <div class="field">
+    <% f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, placeholder: "Confirm Password", class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <% f.label :'First Name' %><br />
+    <%= f.text_field :first_name, class:"form-control", placeholder: "First Name", autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <% f.label :'Last Name' %><br />
+    <%= f.text_field :last_name, class:"form-control", placeholder: "Last Name", autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <% f.label :'State' %><br />
+    <%= f.collection_select :state, State.order(:name), :name, :name, {:include_blank => "State"}, {class: "btn btn-primary dropdown-toggle"} %>
+  </div>
+
+  <div class="field">
+    <% f.label :'City' %><br />
+    <%= f.grouped_collection_select :city, State.order(:name), :cities, :name, :name, :name, {:include_blank => true}, {class: "btn btn-secondary dropdown-toggle" } %>
+  </div>
+
+  <div class="field">
+    <% f.label :'Address' %><br />
+    <%= f.text_field :address, class:"form-control", placeholder: "Address", autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <% f.label :'Phone Number' %><br />
+    <%= f.text_field :phone_number, class:"form-control", placeholder: "Phone Number (###-###-####)", autocomplete: "off" %>
+  </div>
+  <br/>
+
+  <div class="actions">
+    <%= f.submit "Sign up", class: "btn btn-outline-primary" %>
+  </div>
+<% end %>
+<div class="dropdown-divider"></div>
+<br/>
+<p>Already have an account? <%= render "devise/shared/links" %> </p>
