@@ -19,8 +19,7 @@ Enter the commands in your terminal:
 
 == Overview
 
-The application acts as a helper for users to check out books from a library, and for an admin to manage books and users in a database.
-
+The application acts as a helper for users to check out books from a library, and for an admin to manage books and users in a database. Logins are managed with devise and authentication is managed via cancancan.
 
 == Home Page
 
@@ -32,4 +31,4 @@ Once a user is logged in, they can view the list of books in the database. They 
 
 == Admin view
 
-Admin users can look at the book listing in more detail.
+Admin users can look at the book listing in more detail. They can edit the status of each book item, and add new ones. 
