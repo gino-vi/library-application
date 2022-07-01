@@ -4,21 +4,18 @@ Developed to meet a project requirement for SAIT interns.
 
 == Running the Project
 
-1. At the command prompt, create a new Rails application:
-       <tt>rails new myapp</tt> (where <tt>myapp</tt> is the application name)
+Enter the commands in your terminal:
+1. Clone the repo:
+       <tt>git clone https://github.com/gino-vi/library-application/</tt>
 
-2. Change directory to <tt>myapp</tt> and start the web server:
-       <tt>cd myapp; rails server</tt> (run with --help for options)
+2. Initalize the database:
+       <tt>db rake:create
+       db rake:migrate</tt>
 
-3. Go to http://localhost:3000/ and you'll see:
-       "Welcome aboard: You're riding Ruby on Rails!"
+3. Run the server:
+       <tt>rails s</tt>
 
-4. Follow the guidelines to start developing your application. You can find
-the following resources handy:
-
-* The Getting Started Guide: http://guides.rubyonrails.org/getting_started.html
-* Ruby on Rails Tutorial Book: http://www.railstutorial.org/
-
+4. Navigate to http://localhost:3000/
 
 == Overview
 
