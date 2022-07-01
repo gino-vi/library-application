@@ -15,7 +15,7 @@ Enter the commands in your terminal:
 3. Run the server:
        rails s
        
-4. Navigate to http://localhost:3000/
+4. Navigate to http://localhost:3000
 
 == Overview
 
